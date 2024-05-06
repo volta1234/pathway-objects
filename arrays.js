@@ -88,6 +88,18 @@ let pilot4 = {
     }
 };
 
+//object constructors
+
+function Airplane(manufacturer,model,passengerCapacity,engineType,maximumTakeoffWeight) {
+    this.manufacturer = manufacturer,
+    this.model = model,
+    this.passengerCapacity = passengerCapacity,
+    this.engineType = engineType,
+    this.maximumTakeoffWeight = maximumTakeoffWeight
+}
+
+const airPlane4 = new Airplane("embrarer", "E195", 132, "GE CF34-10E", "61 Tonnes")
+
 console.log(airPlane1.manufacturer);
 console.log(airPlane1.manufacturer.concat(" ", airPlane1.model));
 console.log(airPlane2.passengerCapacity);
@@ -97,4 +109,6 @@ console.log(airPlane1.manufacturer, " ", airPlane1.model, " runs on a ", airPlan
 console.log(pilot1.airplane);
 console.log(pilot1.sayHello());
 console.log(pilot3.sayHello());
+console.log(airPlane4.engineType)
+
 // });
