@@ -12,22 +12,53 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
-    <title>Clean Data</title>
+    <title>Clean your data</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../objects.html">Back</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            </ul>
-        </div>
+            <a class="navbar-brand" href="../objects.html">Home</a>
         </div>
     </nav>
-    <h1>Hello, I clean your data</h1>
+    <table class="table table-sm container" id="airplanes">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col">Model</th>
+                <th scope="col">Passenger Capacity</th>
+                <th scope="col">Engine Type</th>
+                <th scope="col">Maximum Takeoff Weight</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <br>
+    <form>
+        <div class="mb-3">
+            <label for="manufacturer" class="form-label">Manufacturer</label>
+            <input type="text" class="form-control" id="manufacturer" placeholder="eg. Boeing" required>
+        </div>
+        <div class="mb-3">
+            <label for="model" class="form-label">Model</label>
+            <input type="text" class="form-control" id="model" placeholder="eg. 747-400">
+        </div>
+        <div class="mb-3">
+            <label for="passengercapacity" class="form-label">Passenger Capacity</label>
+            <input type="text" class="form-control" id="passengercapacity" placeholder="eg. 137">
+        </div>
+        <div class="mb-3">
+            <label for="enginetype" class="form-label">Engine Type</label>
+            <input type="text" class="form-control" id="enginetype" placeholder="eg. Trent 900">
+        </div>
+        <div class="mb-3">
+            <label for="maximumtakeoffweight" class="form-label">Maximum Takeoff Weight</label>
+            <input type="text" class="form-control" id="maximumtakeoffweight" placeholder="eg. 500 Tonnes">
+        </div>
+        <button id="submitbutton" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+    </form>
     <script src="clean data.js"></script>
 </body>
 

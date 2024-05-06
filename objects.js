@@ -51,13 +51,13 @@ function showNewTable(newAirplane) {
     currentAirplanes.innerHTML += newRow;
 }
 
-function clearForm() {
-    document.getElementById("manufacturer").value = "";
-    document.getElementById("model").value = "";
-    document.getElementById("passengercapacity").value = "";
-    document.getElementById("enginetype").value = "";
-    document.getElementById("maximumtakeoffweight").value = "";
-}
+// function clearForm() {
+//     document.getElementById("manufacturer").value = "";
+//     document.getElementById("model").value = "";
+//     document.getElementById("passengercapacity").value = "";
+//     document.getElementById("enginetype").value = "";
+//     document.getElementById("maximumtakeoffweight").value = "";
+// }
 
 let submitButton = document.getElementById("submitbutton");
 
