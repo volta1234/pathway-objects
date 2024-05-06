@@ -17,20 +17,6 @@
 
 <body>
     <div class="body container">
-        <table class="table container">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Manufacturer</th>
-                    <th scope="col">Model</th>
-                    <th scope="col">Passenger Capacity</th>
-                    <th scope="col">Engine Type</th>
-                    <th scope="col">Maximum TOW</th>
-                </tr>
-            </thead>
-            <tbody id="airplanes"></tbody>
-        </table>
-
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             Add new airplane
         </button>
@@ -46,7 +32,7 @@
                         <form>
                             <div class="mb-3">
                                 <label for="manufacturer" class="form-label">Manufacturer</label>
-                                <input type="text" class="form-control" id="manufacturer" placeholder="eg. Boeing">
+                                <input type="text" class="form-control" id="manufacturer" placeholder="eg. Boeing" required>
                             </div>
                             <div class="mb-3">
                                 <label for="model" class="form-label">Model</label>
@@ -72,6 +58,19 @@
                 </div>
             </div>
         </div>
+        <table class="table container">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Manufacturer</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">Passenger Capacity</th>
+                    <th scope="col">Engine Type</th>
+                    <th scope="col">Maximum TOW</th>
+                </tr>
+            </thead>
+            <tbody id="airplanes"></tbody>
+        </table>
     </div>
     <script src="objects.js"></script>
 </body>

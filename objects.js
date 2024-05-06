@@ -21,8 +21,8 @@ let currentAirplanes = document.getElementById("airplanes");
 
 let newAirplanes = " ";
 
-    for (nA = 0; nA < airplanes.length; nA++) {
-        newAirplanes = newAirplanes + `
+for (nA = 0; nA < airplanes.length; nA++) {
+    newAirplanes = newAirplanes + `
         <tr>
             <td scope="col">${nA + 1}</td>
             <td scope="col">${airplanes[nA].manufacturer}</td>
@@ -32,14 +32,14 @@ let newAirplanes = " ";
             <td scope="col">${airplanes[nA].maximumTakeoffWeight}</td>
         </tr>
         `
-    };
+};
 
-    currentAirplanes.innerHTML = newAirplanes;
+currentAirplanes.innerHTML = newAirplanes;
 
-    function showNewTable(newAirplane) {
-        let newRow = `
+function showNewTable(newAirplane) {
+    let newRow = `
         <tr>
-            <td scope="col">${airplanes.length+1}</td>
+            <td scope="col">${airplanes.length + 1}</td>
             <td scope="col">${newAirplane.manufacturer}</td>
             <td scope="col">${newAirplane.model}</td>
             <td scope="col">${newAirplane.passengerCapacity}</td>
@@ -48,21 +48,32 @@ let newAirplanes = " ";
         </tr>
         `
 
-        currentAirplanes.innerHTML += newRow;
-    }
+    currentAirplanes.innerHTML += newRow;
+}
 
-    function clearForm() {
-        document.getElementById("manufacturer").value = "";
-        document.getElementById("model").value = "";
-        document.getElementById("passengercapacity").value = "";
-        document.getElementById("enginetype").value = "";
-        document.getElementById("maximumtakeoffweight").value = "";
-    }
+function clearForm() {
+    document.getElementById("manufacturer").value = "";
+    document.getElementById("model").value = "";
+    document.getElementById("passengercapacity").value = "";
+    document.getElementById("enginetype").value = "";
+    document.getElementById("maximumtakeoffweight").value = "";
+}
 
-    let submitButton = document.getElementById("submitbutton");
+let submitButton = document.getElementById("submitbutton");
 
 submitButton.addEventListener("click", function (e) {
     e.preventDefault();
+
+    const manufacturer = document.getElementById("manufacturer").value;
+    const model = document.getElementById("model").value;
+    const passengerCapacity = document.getElementById("passengercapacity").value;
+    const engineType = document.getElementById("enginetype").value;
+    const maximumTakeoffWeight = document.getElementById("maximumtakeoffweight").value
+
+    if (!manufacturer || !model || !passengerCapacity || !engineType || !maximumTakeoffWeight) {
+        alert("Please fill all input fields");
+        return false;
+    }
 
     let newAirplane = new Airplane(
         document.getElementById("manufacturer").value,
