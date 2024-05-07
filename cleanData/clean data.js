@@ -35,13 +35,25 @@ function renderAirplanes() {
 }
 
 function clearForm() {
-    document.getElementById("editform").reset();
+    document.getElementById("manufacturer").value = "";
+    document.getElementById("model").value = "";
+    document.getElementById("passengercapacity").value = "";
+    document.getElementById("enginetype").value = "";
+    document.getElementById("maximumtakeoffweight").value = "";
 }
 
 function deleteAirplane(index) {
-    airplanes.splice(index, 1);
-    saveAirplanes();
-    renderAirplanes();
+    var confirmation = confirm("Are you sure you want to delete this item?");
+
+
+    if (confirmation) {
+        airplanes.splice(index, 1);
+        saveAirplanes();
+        renderAirplanes();
+    } else{
+
+    };
+
 }
 
 function editAirplane(index) {

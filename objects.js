@@ -1,9 +1,9 @@
 function Airplane(manufacturer, model, passengerCapacity, engineType, maximumTakeoffWeight) {
     this.manufacturer = manufacturer,
-        this.model = model,
-        this.passengerCapacity = passengerCapacity,
-        this.engineType = engineType,
-        this.maximumTakeoffWeight = maximumTakeoffWeight
+    this.model = model,
+    this.passengerCapacity = passengerCapacity,
+    this.engineType = engineType,
+    this.maximumTakeoffWeight = maximumTakeoffWeight
 }
 
 let airplanes = JSON.parse(localStorage.getItem('airplanes')) || [
@@ -51,13 +51,13 @@ function showNewTable(newAirplane) {
     currentAirplanes.innerHTML += newRow;
 }
 
-// function clearForm() {
-//     document.getElementById("manufacturer").value = "";
-//     document.getElementById("model").value = "";
-//     document.getElementById("passengercapacity").value = "";
-//     document.getElementById("enginetype").value = "";
-//     document.getElementById("maximumtakeoffweight").value = "";
-// }
+function clearForm() {
+    document.getElementById("manufacturer").value = "";
+    document.getElementById("model").value = "";
+    document.getElementById("passengercapacity").value = "";
+    document.getElementById("enginetype").value = "";
+    document.getElementById("maximumtakeoffweight").value = "";
+}
 
 let submitButton = document.getElementById("submitbutton");
 
@@ -71,9 +71,9 @@ submitButton.addEventListener("click", function (e) {
     const maximumTakeoffWeight = document.getElementById("maximumtakeoffweight").value
 
     if (!manufacturer || !model || !passengerCapacity || !engineType || !maximumTakeoffWeight) {
-        alert("Please fill all input fields");
-        return false;
-    }
+        confirm("Please fill all input fields");
+        return;
+    };
 
     let newAirplane = new Airplane(
         document.getElementById("manufacturer").value,
